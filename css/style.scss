@@ -1,0 +1,219 @@
+
+*{margin: 0;padding: 0;font:inherit;}
+*,*::after,*::before{box-sizing: border-box;}
+img,svg{display: block;max-width: 100%s;}
+
+// موقع لأشكال الخطوط                -->    https://www.dafont.com
+// [ ] تصميمات يجب العمل عليها      -->    https://www.youtube.com/watch?v=IXucQAEkIMo&ab_channel=TahmidAhmed
+
+/*#region ----------[ var ]---------- */
+@font-face {
+  font-family: 'HankenGrotesk';
+  font-display: swap;
+  font-weight: 100 900;
+  src: url(../fonts/HankenGrotesk-VariableFont_wght.ttf)format('truetype');
+}
+
+:root{
+// #region [Colors]:
+  // primary - secondary - neutral - accent
+--clr-accent-hsl-1: 0, 100%, 67%;             --clr-accent-1: hsl(var(--clr-accent-hsl-1));
+--clr-accent-hsl-2: 39, 100%, 56%;            --clr-accent-2: hsl(var(--clr-accent-hsl-2));
+--clr-accent-hsl-3: 166, 100%, 37%;           --clr-accent-3: hsl(var(--clr-accent-hsl-3));
+--clr-accent-hsl-4: 234, 85%, 45%;            --clr-accent-4: hsl(var(--clr-accent-hsl-4));
+
+--clr-primary-hsl-400: 252, 100%, 67%;        --clr-primary-400: hsl(var(--clr-primary-hsl-400));
+--clr-primary-hsl-500: 256, 72%, 46%;         --clr-primary-500: hsla(var(--clr-primary-hsl-500));
+--clr-secondary-hsl-400: 241, 81%, 54%;       --clr-secondary-400: hsl(var(--clr-secondary-hsl-400));
+--clr-secondary-hsl-500: 241, 72%, 46%;       --clr-secondary-500: hsl(var(--clr-secondary-hsl-500));
+
+--clr-neutral-hsl-100: 0, 0%, 100%;           --clr-neutral-100: hsl(var(--clr-neutral-hsl-100));
+--clr-neutral-hsl-200: 221, 100%, 96%;        --clr-neutral-200: hsl(var(--clr-neutral-hsl-200));
+--clr-neutral-hsl-300: 241, 100%, 89%;        --clr-neutral-300: hsl(var(--clr-neutral-hsl-300));
+--clr-neutral-hsl-700: 224, 30%, 27%;         --clr-neutral-700: hsl(var(--clr-neutral-hsl-700));
+
+--gradient-primary: linear-gradient(var(--clr-primary-400), var(--clr-secondary-400));
+--gradient-to-transparent: linear-gradient(var(--clr-primary-500),hsl(var(--clr-secondary-500), 0));
+// #endregion
+
+// #region [Fonts]:
+$fy-g          :   'Hanken Grotesk', sans-serif;  --fy-g        :#{$fy-g};  //--font-family-default: 'HankenGrotesk', sans-serif;
+
+$fw-regular    :   500                         ;  --fw-regular  :#{$fw-regular};
+$fw-bold       :   700                         ;  --fw-bold     :#{$fw-bold};
+$fw-black      :   800                         ;  --fw-black    :#{$fw-black};
+
+$fs-100        :   0.74rem                     ;  --fs-300      :#{$fs-100};  //  12px
+$fs-200        :   0.875rem                    ;  --fs-300      :#{$fs-200};  //  14px
+$fs-300        :   1rem                        ;  --fs-300      :#{$fs-300};  //  16px
+$fs-400        :   1.125rem                    ;  --fs-400      :#{$fs-400};  //  18px
+$fs-500        :   1.25rem                     ;  --fs-500      :#{$fs-500};  //  20px
+$fs-600        :   1.5rem                      ;  --fs-600      :#{$fs-600};  //  24px
+$fs-700        :   1.75rem                     ;  --fs-700      :#{$fs-700};  //  28px
+$fs-800        :   2rem                        ;  --fs-800      :#{$fs-800};  //  32px
+$fs-900        :   5rem                        ;  --fs-900      :#{$fs-900};  //  80px
+// #endregion
+}
+
+/*#endregion*/
+
+// #region [Color sass]
+$c-a100        :    var(   --clr-accent-1             );
+$c-a200        :    var(   --clr-accent-2             );
+$c-a300        :    var(   --clr-accent-3             );
+$c-a400        :    var(   --clr-accent-4             );
+
+$c-p400        :    var(   --clr-primary-400          );
+$c-p500        :    var(   --clr-primary-500          );
+$c-s400        :    var(   --clr-secondary-400        );
+$c-s400        :    var(   --clr-secondary-500        );
+
+$c-n100        :    var(   --clr-neutral-100          );
+$c-n200        :    var(   --clr-neutral-200          );
+$c-n700        :    var(   --clr-neutral-700          );
+
+$c-gp          :    var(   --gradient-primary         );
+$c-gtt         :    var(   --gradient-to-transparent  );
+
+
+$fy-g          :   var(   --fy-g                      );
+
+$fw-regular    :   var(   --fw-regular                );
+$fw-bold       :   var(   --fw-bold                   );
+$fw-black      :   var(   --fw-black                  );
+
+$fs-100        :   var(   --fs-100                    );
+$fs-200        :   var(   --fs-200                    );
+$fs-300        :   var(   --fs-300                    );
+$fs-400        :   var(   --fs-400                    );
+$fs-500        :   var(   --fs-500                    );
+$fs-600        :   var(   --fs-600                    );
+$fs-700        :   var(   --fs-700                    );
+$fs-800        :   var(   --fs-800                    );
+$fs-900        :   var(   --fs-900                    );
+
+// #endregion
+
+// #region [Media query]:
+$mq-M          :   375px                       ;
+$mq-D          :   1440px                      ;
+// #endregion
+
+.app{
+  margin: 0 auto;
+  max-width: $mq-D;
+  width: 100vw;
+  height: 100vh;
+  font-size: $fs-400;
+  font-family: $fy-g;
+  color: $c-n700;
+
+  flex-flow: row wrap;
+  
+  @media (width <= 600px) {
+    background: #f00;      //todo -D
+    display: grid;
+    place-items: center;
+  }
+}
+.content{
+  --br:2rem;      //todo to var
+  --pd:2.5rem;    //todo to var
+  width: 46rem;//736px;     //todo to var
+  height: 512px;            //todo to var
+  background-color: #ff0; //todo -D
+  border-radius: var(--br);
+  box-shadow: 5rem 1rem 3rem hsl(var(--clr-neutral-hsl-700),.2);      //todo to var
+  
+  display: flex;
+  flex-flow: row wrap;
+  @media ($mq-M < width) {
+    overflow: hidden;
+  }
+  
+  & .result,& .summary{padding: var(--pd);}
+  & .result{
+    width: 50%; //368px;       //todo to var
+    height: 100%;       //todo to var
+    color: hsl(var(--clr-neutral-hsl-100),.7);
+    background:$c-gp;
+
+    flex-flow: column wrap;
+    justify-content: start;
+    border-radius: var(--br);
+    
+    @media ( width <= $mq-M) {
+      border-radius: 0 0 var(--br) var(--br);
+
+    }
+
+    & h1{
+      margin-block: 42px;   //todo to var
+      background-color: red;//todo -D
+    }
+    & p:nth-of-type(1){
+      background:$c-gtt;
+      $w:200px;       //todo to var
+      width: $w;height: $w;
+      @extend .fx-c;
+      flex-flow: column wrap;
+      border-radius: 50%;
+      
+
+    }
+
+  }
+
+  & .summary{
+    padding: 0 40px;           //todo to var
+    width: 50%; //368px;       //todo to var
+    
+    flex-flow: column wrap;
+    justify-content: space-around;
+    
+    & p{
+      padding: 0 20px;           //todo to var
+      width: 100%;
+      height: 40px;         //todo to var
+      background-color: #f00;
+      border-radius: 10px;   //todo to var
+
+      display: flex;
+      flex-flow: row wrap;
+      justify-content: space-between;
+      align-items: center;
+      
+      i::after{content:' / 100';}
+      i::before{content:var(--s);}
+    }
+  }
+
+
+
+
+  .btn{
+    padding: 1rem 2rem;         //todo to var
+    color:$c-n100;
+    background: $c-n700;
+    line-height: 1;       //todo to var
+    border: 0;
+    border-radius: 100vw;
+    cursor: pointer;
+    &:hover,&:focus-visible{
+      background: $c-gp;
+    }
+  }
+}
+
+
+
+
+// classes-global:
+
+.fx-c{
+  display: flex;
+  // flex-flow:row repeat;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}

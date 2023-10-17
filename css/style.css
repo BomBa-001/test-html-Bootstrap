@@ -1,0 +1,169 @@
+* {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+}
+
+*, *::after, *::before {
+  box-sizing: border-box;
+}
+
+img, svg {
+  display: block;
+  max-width: 100% s;
+}
+
+/*#region ----------[ var ]---------- */
+@font-face {
+  font-family: "HankenGrotesk";
+  font-display: swap;
+  font-weight: 100 900;
+  src: url(../fonts/HankenGrotesk-VariableFont_wght.ttf) format("truetype");
+}
+:root {
+  --clr-accent-hsl-1: 0, 100%, 67%;
+  --clr-accent-1: hsl(var(--clr-accent-hsl-1));
+  --clr-accent-hsl-2: 39, 100%, 56%;
+  --clr-accent-2: hsl(var(--clr-accent-hsl-2));
+  --clr-accent-hsl-3: 166, 100%, 37%;
+  --clr-accent-3: hsl(var(--clr-accent-hsl-3));
+  --clr-accent-hsl-4: 234, 85%, 45%;
+  --clr-accent-4: hsl(var(--clr-accent-hsl-4));
+  --clr-primary-hsl-400: 252, 100%, 67%;
+  --clr-primary-400: hsl(var(--clr-primary-hsl-400));
+  --clr-primary-hsl-500: 256, 72%, 46%;
+  --clr-primary-500: hsla(var(--clr-primary-hsl-500));
+  --clr-secondary-hsl-400: 241, 81%, 54%;
+  --clr-secondary-400: hsl(var(--clr-secondary-hsl-400));
+  --clr-secondary-hsl-500: 241, 72%, 46%;
+  --clr-secondary-500: hsl(var(--clr-secondary-hsl-500));
+  --clr-neutral-hsl-100: 0, 0%, 100%;
+  --clr-neutral-100: hsl(var(--clr-neutral-hsl-100));
+  --clr-neutral-hsl-200: 221, 100%, 96%;
+  --clr-neutral-200: hsl(var(--clr-neutral-hsl-200));
+  --clr-neutral-hsl-300: 241, 100%, 89%;
+  --clr-neutral-300: hsl(var(--clr-neutral-hsl-300));
+  --clr-neutral-hsl-700: 224, 30%, 27%;
+  --clr-neutral-700: hsl(var(--clr-neutral-hsl-700));
+  --gradient-primary: linear-gradient(var(--clr-primary-400), var(--clr-secondary-400));
+  --gradient-to-transparent: linear-gradient(var(--clr-primary-500),hsl(var(--clr-secondary-500), 0));
+  --fy-g:Hanken Grotesk, sans-serif;
+  --fw-regular:500;
+  --fw-bold:700;
+  --fw-black:800;
+  --fs-300:0.74rem;
+  --fs-300:0.875rem;
+  --fs-300:1rem;
+  --fs-400:1.125rem;
+  --fs-500:1.25rem;
+  --fs-600:1.5rem;
+  --fs-700:1.75rem;
+  --fs-800:2rem;
+  --fs-900:5rem;
+}
+
+/*#endregion*/
+.app {
+  margin: 0 auto;
+  max-width: 1440px;
+  width: 100vw;
+  height: 100vh;
+  font-size: var(--fs-400);
+  font-family: var(--fy-g);
+  color: var(--clr-neutral-700);
+  flex-flow: row wrap;
+}
+@media (width <= 600px) {
+  .app {
+    background: #f00;
+    display: grid;
+    place-items: center;
+  }
+}
+
+.content {
+  --br:2rem;
+  --pd:2.5rem;
+  width: 46rem;
+  height: 512px;
+  background-color: #ff0;
+  border-radius: var(--br);
+  box-shadow: 5rem 1rem 3rem hsl(var(--clr-neutral-hsl-700), 0.2);
+  display: flex;
+  flex-flow: row wrap;
+}
+@media (375px < width) {
+  .content {
+    overflow: hidden;
+  }
+}
+.content .result, .content .summary {
+  padding: var(--pd);
+}
+.content .result {
+  width: 50%;
+  height: 100%;
+  color: hsl(var(--clr-neutral-hsl-100), 0.7);
+  background: var(--gradient-primary);
+  flex-flow: column wrap;
+  justify-content: start;
+  border-radius: var(--br);
+}
+@media (width <= 375px) {
+  .content .result {
+    border-radius: 0 0 var(--br) var(--br);
+  }
+}
+.content .result h1 {
+  margin-block: 42px;
+  background-color: red;
+}
+.content .result p:nth-of-type(1) {
+  background: var(--gradient-to-transparent);
+  width: 200px;
+  height: 200px;
+  flex-flow: column wrap;
+  border-radius: 50%;
+}
+.content .summary {
+  padding: 0 40px;
+  width: 50%;
+  flex-flow: column wrap;
+  justify-content: space-around;
+}
+.content .summary p {
+  padding: 0 20px;
+  width: 100%;
+  height: 40px;
+  background-color: #f00;
+  border-radius: 10px;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.content .summary p i::after {
+  content: " / 100";
+}
+.content .summary p i::before {
+  content: var(--s);
+}
+.content .btn {
+  padding: 1rem 2rem;
+  color: var(--clr-neutral-100);
+  background: var(--clr-neutral-700);
+  line-height: 1;
+  border: 0;
+  border-radius: 100vw;
+  cursor: pointer;
+}
+.content .btn:hover, .content .btn:focus-visible {
+  background: var(--gradient-primary);
+}
+
+.fx-c, .content .result p:nth-of-type(1) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}/*# sourceMappingURL=style.css.map */
